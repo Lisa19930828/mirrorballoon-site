@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Products | Joyful Decoration</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+        body {
+            background: url('images/bg.jpg') center center / cover no-repeat fixed;
+            background-color: #f8f8f8;
+            color: #333;
+            line-height: 1.6;
+            padding-top: 70px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* 导航栏 */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0,0,0,0.85);
+            padding: 15px 0;
+            text-align: center;
+            z-index: 999;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 18px;
+            font-size: 16px;
+        }
+        nav a:hover { color: #ffd700; }
+
+        /* 主体布局：左侧菜单 + 右侧内容 */
+        .main-wrapper {
+            display: flex;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        /* 左侧菜单栏 */
+        .sidebar {
+            width: 260px;
+            background: rgba(255,255,255,0.95);
+            border-radius: 10px;
+            padding: 20px;
+            position: sticky;
+            top: 90px;
+            height: fit-content;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+        }
+        .sidebar-title {
+            font-size: 20px;
+            color: #222;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f87a8c;
+        }
+        .category-menu {
+            list-style: none;
+        }
+        .menu-item {
+            margin-bottom: 10px;
+        }
+        .menu-item a {
+            display: block;
+            padding: 10px 15px;
+            color: #333;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+        .menu-item a:hover {
+            background: #f87a8c;
+            color: white;
+        }
+        .submenu {
+            list-style: none;
+            margin-left: 15px;
+            margin-top: 5px;
+            display: none;
+        }
+        .submenu.active {
+            display: block;
+        }
+        .submenu li a {
+            padding: 8px 15px;
+            font-size: 14px;
+            color: #555;
+        }
+        .toggle-btn {
+            background: none;
+            border: none;
+            color: #f87a8c;
+            cursor: pointer;
+            font-size: 16px;
+            margin-left: 5px;
+        }
+
+        /* 右侧内容区 */
+        .content {
+            flex: 1;
+        }
+        .container {
+            width: 100%;
+        }
+
+        .page-title {
+            text-align: center;
+            font-size: 36px;
+            padding: 20px;
+            background: rgba(255,255,255,0.9);
+            border-radius: 10px;
+            margin-bottom: 10px;
+            color: #222;
+        }
+
+        .page-slogan {
+            text-align: center;
+            font-size: 18px;
+            color: #555;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            background: rgba(255,255,255,0.9);
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        .category-title {
+            text-align: center;
+            margin: 40px 0 20px;
+            font-size: 28px;
+            color: #222;
+            background: rgba(255,255,255,0.9);
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            background: rgba(255,255,255,0.9);
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+        .product-card img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+        }
+        .product-info {
+            padding: 20px;
+            text-align: center;
+        }
+        .product-info h3 {
+            font-size: 18px;
+            margin-bottom: 12px;
+            color: #222;
+        }
+        .product-info a {
+            display: inline-block;
+            padding: 8px 16px;
+            background: #f87a8c;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .product-info a:hover {
+            background: #f65a6f;
+        }
+
+        footer {
+            background: #222;
+            color: #fff;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 40px;
+            width: 100%;
+        }
+        footer a {
+            color: #ffd700;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        @media (max-width: 768px) {
+            .main-wrapper {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                position: static;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="home.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact Us</a>
+</nav>
+
+<div class="main-wrapper">
+    <!-- 左侧菜单栏 -->
+    <aside class="sidebar">
+        <h3 class="sidebar-title">Product Categories</h3>
+        <ul class="category-menu">
+            <li class="menu-item">
+                <a href="#mirror-balloons">Round Mirror Balloons</a>
+                <button class="toggle-btn">+</button>
+                <ul class="submenu" id="mirror-submenu">
+                    <li><a href="#gold">Gold</a></li>
+                    <li><a href="#silver">Silver</a></li>
+                    <li><a href="#iridescent">Iridescent</a></li>
+                    <li><a href="#red">Red</a></li>
+                    <li><a href="#white">White</a></li>
+                    <li><a href="#black">Black</a></li>
+                </ul>
+            </li>
+            <li class="menu-item">
+                <a href="#egg-shape">Egg Shape Mirror Balloons</a>
+                <button class="toggle-btn">+</button>
+                <ul class="submenu" id="egg-submenu">
+                    <li><a href="#egg-gold">Gold</a></li>
+                    <li><a href="#egg-silver">Silver</a></li>
+                    <li><a href="#egg-red">Red</a></li>
+                    <li><a href="#egg-blue">Blue</a></li>
+                    <li><a href="#egg-green">Green</a></li>
+                    <li><a href="#egg-purple">Purple</a></li>
+                </ul>
+            </li>
+            <li class="menu-item">
+                <a href="#special-shapes">Special Shape Balloons</a>
+                <button class="toggle-btn">+</button>
+                <ul class="submenu" id="special-submenu">
+                    <li><a href="#heart">Heart Shape</a></li>
+                    <li><a href="#letters">Mirror Letters</a></li>
+                    <li><a href="#numbers">Mirror Numbers</a></li>
+                    <li><a href="#arch">Mirror Arch</a></li>
+                    <li><a href="#disco">Disco Balloon</a></li>
+                    <li><a href="#custom">Custom Mirror Balloon</a></li>
+                    <li><a href="#christmas">Christmas Mirror Ball</a></li>
+                </ul>
+            </li>
+        </ul>
+    </aside>
+
+    <!-- 右侧内容区 -->
+    <main class="content">
+        <div class="container">
+            <h1 class="page-title">Joyful Decoration</h1>
+            <p class="page-slogan">Mirror the World, Reflect the Joy! High Quality Inflatable Mirror Balloons For Wedding, Birthday, Party & Event Decoration</p>
+
+            <!-- 圆形镜面球 -->
+            <h2 class="category-title" id="mirror-balloons">Round Mirror Balloons</h2>
+            <div class="product-grid">
+                <div class="product-card" id="gold">
+                    <img src="images/gold/product/product-1.jpg" alt="Gold Mirror Balloon">
+                    <div class="product-info">
+                        <h3>Gold Mirror Balloon</h3>
+                        <a href="gold.html">View Details</a>
+                    </div>
+                </div>
+                <div class="product-card" id="silver">
+                    <img src="images/silver/product/product-1.jpg" alt="Silver Mirror Balloon">
+                    <div class="product-info">
+                        <h3>Silver Mirror Balloon</h3>
+                        <a href="silver.html">View Details</a>
+                    </div>
+                </div>
+                <div class="product-card" id="iridescent">
+                    <img src="images/iridescent/product/product-1.jpg" alt="Iridescent Mirror Balloon">
+                    <div class="product-info">
+                        <h3>Iridescent Mirror Balloon</h3>
+                        <a href="iridescent.html">View Details</a>
+                    </div>
+                </div>
+                <div class="product-card" id="red">
+                    <img src="images/red/product/product-1.jpg" alt="Red Mirror Balloon">
+                    <div class="product-info">
+                        <h3>Red Mirror Balloon</h3>
+                        <a href="red.html">View Details</a>
+                    </div>
+                </div>
+                <div class="product-card" id="white">
+                    <img src="images/white/product/product-1.jpg" alt="White Mirror Balloon">
+                    <div class="product-info">
+                        <h3>White Mirror Balloon</h3>
+                        <a href="white.html">View Details</a>
+                    </div>
+                </div>
+                <div class="product-card" id="black">
+                    <img src="images/black/product/product-1.jpg" alt="Black Mirror Balloon">
+                    <div class="product-info">
+                        <h3>Black Mirror Balloon</h3>
+                        <a href="black.html">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 蛋形镜面球 -->
+            <h2 class="category-title" id="egg-shape">Egg Shape Mirror Balloons</h2>
+            <div class="product-grid">
+                <div class="product-card" id="egg-gold">
+                    <img src="images/egg-shape gold/product/product-1.jpg" alt="Gold Egg Mirror Balloon">
+                    <div class="product-info">
+                        <h3>Gold Egg Mirror Balloon</h3>
+                        <a href="gold-egg.html">View Details</a>
+                    </div>
+                </div>
+                <div class="product-card" id="egg-silver">
+                    <img src="images/egg-shape silver/product/product-1.jpg" alt="Silver Egg Mirror Balloon">
+                    <div class="product-info">
+                        <h3>Silver Egg Mirror Balloon</h3>
+                        <a href="silver-egg.html">View Details</a>
+                    </div>
+                </div>
+                <div class="product-card" id="egg-red">
+                    <img src="images/egg-shape red/product/product-1.jpg" alt="Red Egg Mirror Balloon">
+                    <div class="product-info">
+                        <h3>Red Egg Mirror Balloon</h3>
+                        <a href="red-egg.html">View Details</a>
+                    </div>
+                </div>
+                <div class="product-card" id="egg-blue">
+                    <img src="images/egg-shape blue/product/product-1.jpg" alt="Blue Egg Mirror Balloon">
+                    <div class="product-info">
+                        <h3>Blue Egg Mirror Balloon</h3>
+                        <a href="blue-egg.html">View Details</a>
+                    </div>
+                </div>
+                <div class="product-card" id="egg-green">
+                    <img src="images/egg-shape green/product/product-1.jpg" alt="Green Egg Mirror Balloon">
+                    <div class="product-info">
+                        <h3>Green Egg Mirror Balloon</h3>
+                        <a href="green-egg.html">View Details</a>
+                    </div>
+                </div>
+                <div class="product-card" id="egg-purple">
+                    <img src="images/egg-shape purple/product/product-1.jpg" alt="Purple Egg Mirror Balloon">
+                    <div class="product-info">
+                        <h3>Purple Egg Mirror Balloon</h3>
+                        <a href="purple-egg.html">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 特殊形状镜面球 -->
+            <h2 class="category-title" id="special-shapes">Special Shape Balloons</h2>
+            <div class="product-grid">
+                <div class="product-card" id="heart">
+                    <img src="images/heart/product/product-1.jpg" alt="Heart Mirror Balloon">
+                    <div class="product-info">
+                        <h3>Heart Mirror Balloon</h3>
+                        <a href="heart-mirror-balloon.html">View Details</a>
+                    </div>
+                </div>
+                <div class="product-card" id="letters">
+                    <img src="images/mirror letters/product/product-1.jpg" alt="Mirror Letters">
+                    <div class="product-info">
+                        <h3>Mirror Letters</h3>
+                        <a href="mirror-letters.html">View Details</a>
+                    </div>
+                </div>
+                <div class="product-card" id="numbers">
+                    <img src="images/mirror numbers/product/product-1.jpg" alt="Mirror Numbers">
+                    <div class="product-info">
+                        <h3>Mirror Numbers</h3>
+                        <a href="mirror-numbers.html">View Details</a>
+                    </div>
+                </div>
+                <div class="product-card" id="arch">
+                    <img src="images/mirror arch/product-1.jpg" alt="Mirror Arch">
+                    <div class="product-info">
+                        <h3>Mirror Arch</h3>
+                        <a href="mirror-arch.html">View Details</a>
+                    </div>
+                </div>
+                <div class="product-card" id="disco">
+                    <img src="images/disco balloon/product/product-1.png" alt="Disco Mirror Balloon">
+                    <div class="product-info">
+                        <h3>Disco Mirror Balloon</h3>
+                        <a href="disco-balloon.html">View Details</a>
+                    </div>
+                </div>
+                <div class="product-card" id="custom">
+                    <img src="images/custom mirror balloon/product/product-1.jpg" alt="Custom Mirror Balloon">
+                    <div class="product-info">
+                        <h3>Custom Mirror Balloon</h3>
+                        <a href="custom-mirror-balloon.html">View Details</a>
+                    </div>
+                </div>
+                <div class="product-card" id="christmas">
+                    <img src="images/christmas ball/product/product-1.jpg" alt="Christmas Mirror Ball">
+                    <div class="product-info">
+                        <h3>Christmas Mirror Ball</h3>
+                        <a href="christmas-mirror-ball.html">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+<footer>
+    <p>© 2026 Joyful Decoration All Rights Reserved</p>
+    <p>
+        <a href="mailto:1255527934@qq.com?subject=Inquiry%20about%20inflatable%20decorations">Email Us</a>
+        <a href="whatsapp-landing.html">WhatsApp</a>
+    </p>
+</footer>
+
+<!-- 菜单折叠/展开脚本 -->
+<script>
+    const toggleBtns = document.querySelectorAll('.toggle-btn');
+    toggleBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const submenu = this.parentElement.querySelector('.submenu');
+            submenu.classList.toggle('active');
+            this.textContent = submenu.classList.contains('active') ? '-' : '+';
+        });
+    });
+</script>
+
+</body>
+</html>

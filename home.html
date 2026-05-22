@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joyful Decoration | Inflatable Mirror Balloons</title>
+    <meta name="description" content="Wholesale high quality inflatable mirror balloons, disco ball, heart, letter, number and custom mirror decoration for events.">
+    <meta name="keywords" content="inflatable mirror balloon, mirror ball, disco balloon, event decoration">
+    <meta name="robots" content="index, follow">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            color: #fff;
+            overflow-x: hidden;
+        }
+        /* 导航栏 */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0,0,0,0.75);
+            padding: 15px 0;
+            text-align: center;
+            z-index: 999;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 18px;
+            font-size: 16px;
+        }
+        nav a:hover {
+            color: #ffd700;
+        }
+
+        /* 全屏视频背景容器 */
+        .hero {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .hero-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            transform: translate(-50%,-50%);
+            object-fit: cover;
+            z-index: -2;
+        }
+        /* 遮罩加深文字可读性 */
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.45);
+            z-index: -1;
+        }
+        .hero-content {
+            z-index: 2;
+            padding: 0 20px;
+        }
+        .hero-content h1 {
+            font-size: 56px;
+            margin-bottom: 20px;
+            font-weight: bold;
+            /* 标题发光效果 */
+            text-shadow: 0 0 10px rgba(255,255,255,0.8), 0 0 20px rgba(255,255,255,0.6);
+        }
+        /* 放大并增加发光效果的 slogan */
+        .hero-content p {
+            font-size: 28px;
+            margin-bottom: 45px;
+            opacity: 1;
+            font-weight: 600;
+            line-height: 1.4;
+            /* 白色外发光 + 深色阴影，双重保障可读性 */
+            text-shadow: 0 0 8px rgba(255,255,255,0.9), 0 0 15px rgba(255,255,255,0.7), 2px 2px 4px rgba(0,0,0,0.8);
+        }
+        .btn-product {
+            display: inline-block;
+            padding: 18px 50px;
+            background: #f87a8c;
+            color: #fff;
+            font-size: 20px;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: background 0.3s ease;
+        }
+        .btn-product:hover {
+            background: #f65a6f;
+        }
+
+        /* 底部简易版权 */
+        footer {
+            position: absolute;
+            bottom: 15px;
+            width: 100%;
+            text-align: center;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 36px;
+            }
+            .hero-content p {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="home.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact Us</a>
+</nav>
+
+<section class="hero">
+    <!-- 视频位置已和你上传的素材路径匹配 -->
+    <video class="hero-video" muted autoplay loop playsinline poster="images/front/hero-poster.jpg">
+        <source src="images/front/hero.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+        <h1>Joyful Decoration</h1>
+        <!-- 你可以直接把这里改成你的完整 slogan -->
+        <p>Mirror the World, Reflect the Joy!</p>
+        <a href="products.html" class="btn-product">View All Products</a>
+    </div>
+
+    <footer>
+        © 2026 Joyful Decoration All Rights Reserved
+    </footer>
+</section>
+
+</body>
+</html>

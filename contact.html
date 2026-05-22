@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Joyful Decoration</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+        body{padding-top:70px;
+            background:#f8f8f8 url('images/bg.jpg') no-repeat center center fixed;
+            background-size:cover;
+            background-color:rgba(255,255,255,0.85);
+            background-blend-mode:lighten;
+        }
+        nav{position:fixed;top:0;width:100%;background:rgba(0,0,0,0.85);padding:15px 0;text-align:center;z-index:999}
+        nav a{color:#fff;text-decoration:none;margin:0 18px;font-size:16px}
+        nav a:hover{color:#ffd700}
+        .container{max-width:900px;margin:0 auto;padding:60px 20px}
+        h1{text-align:center;font-size:30px;color:#222;margin-bottom:30px}
+        .contact-box{background:#fff;padding:30px;border-radius:8px;box-shadow:0 2px 10px rgba(0,0,0,0.08)}
+        .contact-box p{font-size:17px;line-height:2.2;color:#444}
+        .contact-item{margin-bottom:25px;padding-bottom:20px;border-bottom:1px solid #eee}
+        footer{background:#222;color:#fff;text-align:center;padding:30px 20px;margin-top:60px}
+        footer a{color:#ffd700;text-decoration:none;margin:0 10px}
+        .whatsapp-float{position:fixed;bottom:20px;right:20px;background:#25d366;color:white;border-radius:50%;width:60px;height:60px;font-size:30px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 10px rgba(0,0,0,0.2);z-index:9999;text-decoration:none}
+        .qr-code{width:160px;margin-top:10px;display:block;background:#fff;padding:5px;/* 用白色背景盖住图片自带的中文 */}
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="home.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact Us</a>
+</nav>
+
+<div class="container">
+    <h1>Contact Us</h1>
+    <div class="contact-box">
+
+        <!-- 联系人1：Lisa（带二维码） -->
+        <div class="contact-item">
+            <p><strong>Contact Person:</strong> Lisa</p>
+            <p><strong>WhatsApp:</strong> +86 17610999769</p>
+            <p><strong>Email:</strong> 1255527934@qq.com</p>
+            <p><strong>WeChat:</strong> Scan the QR code below</p>
+            <img src="images/contact/Wechat-Lisa.jpg" alt="Lisa's WeChat QR Code" class="qr-code">
+        </div>
+
+        <!-- 联系人2：Shanshan（已修复路径+二维码） -->
+        <div class="contact-item">
+            <p><strong>Contact Person:</strong> Shanshan</p>
+            <p><strong>WhatsApp:</strong> +86 13161003306</p>
+            <p><strong>Email:</strong> weishanshan01@foxmail.com</p>
+            <p><strong>WeChat:</strong> Scan the QR code below</p>
+            <img src="images/contact/Wechat-shanshan.jpg" alt="Shanshan's WeChat QR Code" class="qr-code">
+        </div>
+
+        <p style="margin-top:20px"><strong>Business Time:</strong> Monday - Saturday 09:00 - 18:00</p>
+        <p>Welcome for wholesale, bulk order, OEM custom cooperation.</p>
+    </div>
+</div>
+
+<footer>
+    <p>
+        <a href="whatsapp-landing.html" target="_blank">WhatsApp Lisa</a> |
+        <a href="https://wa.me/8613161003306" target="_blank">WhatsApp Shanshan</a> |
+        <a href="contact.html">Contact Us</a>
+    </p>
+    <p style="margin-top:15px">© 2025 Joyful Decoration. All Rights Reserved.</p>
+</footer>
+
+<a href="whatsapp-landing.html" target="_blank" class="whatsapp-float">💬</a>
+
+</body>
+</html>
