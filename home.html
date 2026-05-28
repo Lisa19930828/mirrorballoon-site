@@ -124,6 +124,45 @@
             }
         }
     </style>
+<style>
+/* ===== 仅优化Tidio按钮，不影响其他样式 ===== */
+#tidio-chat-iframe {
+    transform: scale(1.3) !important;
+    transform-origin: bottom right !important;
+    right: 10px !important;
+    bottom: 180px !important;
+}
+.tidio-widget-side-button {
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    line-height: 1.5 !important;
+}
+</style>
+<style>
+.whatsapp-landing-btn {
+    position: fixed;
+    right: 24px;
+    bottom: 100px;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background-color: #25D366;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 9999;
+    text-decoration: none;
+}
+.whatsapp-landing-btn img {
+    width: 28px;
+    height: 28px;
+}
+</style>
+
+<a href="whatsapp-landing.html" class="whatsapp-landing-btn" target="_blank">
+  <img src="https://cdn-icons-png.flaticon.com/512/1041/1041916.png" alt="客服选择">
+</a>
 </head>
 <body>
 
@@ -153,5 +192,7 @@
     </footer>
 </section>
 
+<!-- 专属Tidio在线客服窗口 -->
+<script src="//code.tidio.co/h9vhmiblehno7adhhqi5m0tmwvcsjvfo.js" async></script>
 </body>
 </html>

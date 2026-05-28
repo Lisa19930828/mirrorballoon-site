@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="preconnect" href="https://code.tidio.co" crossorigin>
+<link rel="preconnect" href="https://www.tidio.com" crossorigin>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Red Inflatable Mirror Ball | Party & Wedding Decor</title>
@@ -146,14 +148,246 @@
             z-index: 999;
         }
     </style>
+<style>
+/* ===== Tidio 客服按钮 最终修复版 ===== */
+#tidio-chat-iframe {
+    transform: scale(1.3) !important;
+    transform-origin: bottom right !important;
+    right: 10px !important;
+    bottom: 260px !important;
+    z-index: 999999 !important;
+    position: fixed !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+</style>
+<style>
+/* 全局背景设置 */
+body {
+  background-image: url("images/bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+/* 强制FAQ和表单背景透明，不遮挡背景图 */
+.faq-section, .contact-form-section {
+  background: transparent !important;
+}
+</style>
+<meta name="description" content="Wholesale round mirror balloons, shiny reflective disco balloons perfect for wedding, party, nightclub and event decoration. Custom sizes and colors available.">
 </head>
-<body>
+ <body>
+
+<!-- 固定左侧产品分类菜单 -->
+<style>
+/* 产品卡片+表格 最终美化（不挡背景、不影响左侧分类、不分条） */
+.product-card {
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+  padding: 30px;
+  margin: 20px auto 20px 270px;
+  max-width: calc(100% - 290px);
+  position: relative;
+  z-index: 10;
+}
+.product-card h1 {
+  text-align: center;
+  color: #222;
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  letter-spacing: 0.5px;
+}
+.product-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+.product-table td:nth-child(1) {
+  width: 18%;
+}
+.product-table td:nth-child(2) {
+  width: 82%;
+}
+.product-table td {
+  padding: 16px 20px;
+  border: 1px solid #eee;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #333;
+  background: #fff;
+}
+.product-table tr:first-child td {
+  background: #f87a8c;
+  color: #fff;
+  font-weight: 600;
+  text-align: center;
+}
+.product-table tr:hover td {
+  background: #fdf2f4;
+}
+
+/* 左侧分类原样保留，不受影响 */
+.fixed-sidebar {
+    position: fixed;
+    top: 100px;
+    left: 20px;
+    width: 260px;
+    background: rgba(255,255,255,0.95);
+    border-radius: 10px;
+    padding: 20px;
+    z-index: 998;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+    max-height: 80vh;
+    overflow-y: auto;
+}
+.fixed-sidebar .sidebar-title {
+    font-size: 20px;
+    color: #222;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f87a8c;
+}
+.fixed-sidebar .category-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.fixed-sidebar .menu-item {
+    margin-bottom: 10px;
+    position: relative;
+}
+.fixed-sidebar .menu-item a {
+    display: block;
+    padding: 10px 15px;
+    color: #333;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+.fixed-sidebar .menu-item a:hover {
+    background: #f87a8c;
+    color: white;
+}
+.fixed-sidebar .submenu {
+    list-style: none;
+    margin-left: 15px;
+    margin-top: 5px;
+    display: none;
+}
+.fixed-sidebar .submenu.active {
+    display: block;
+}
+.fixed-sidebar .submenu li a {
+    padding: 8px 15px;
+    font-size: 14px;
+    color: #555;
+}
+.fixed-sidebar .toggle-btn {
+    background: none;
+    border: none;
+    color: #f87a8c;
+    cursor: pointer;
+    font-size: 16px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+@media (max-width: 1200px) {
+    .fixed-sidebar { display: none; }
+}
+</style>
+
+<div class="fixed-sidebar">
+    <h3 class="sidebar-title">Product Categories</h3>
+    <ul class="category-menu">
+        <li class="menu-item">
+            <a href="products.html#mirror-balloons">Round Mirror Balloons</a>
+            <button class="toggle-btn">+</button>
+            <ul class="submenu">
+                <li><a href="gold.html">Gold</a></li>
+                <li><a href="silver.html">Silver</a></li>
+                <li><a href="iridescent.html">Iridescent</a></li>
+                <li><a href="red.html">Red</a></li>
+                <li><a href="white.html">White</a></li>
+                <li><a href="black.html">Black</a></li>
+            </ul>
+        </li>
+        <li class="menu-item">
+            <a href="products.html#egg-shape">Egg Shape Mirror Balloons</a>
+            <button class="toggle-btn">+</button>
+            <ul class="submenu">
+                <li><a href="gold-egg.html">Gold</a></li>
+                <li><a href="silver-egg.html">Silver</a></li>
+                <li><a href="red-egg.html">Red</a></li>
+                <li><a href="blue-egg.html">Blue</a></li>
+                <li><a href="green-egg.html">Green</a></li>
+                <li><a href="purple-egg.html">Purple</a></li>
+            </ul>
+        </li>
+        <li class="menu-item">
+            <a href="products.html#special-shapes">Special Shape Balloons</a>
+            <button class="toggle-btn">+</button>
+            <ul class="submenu">
+                <li><a href="heart-mirror-balloon.html">Heart Shape</a></li>
+                <li><a href="mirror-letters.html">Mirror Letters</a></li>
+                <li><a href="mirror-numbers.html">Mirror Numbers</a></li>
+                <li><a href="mirror-arch.html">Mirror Arch</a></li>
+                <li><a href="disco-balloon.html">Disco Balloon</a></li>
+                <li><a href="custom-mirror-balloon.html">Custom Mirror Balloon</a></li>
+                <li><a href="christmas-mirror-ball.html">Christmas Mirror Ball</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<script>
+document.querySelectorAll('.fixed-sidebar .toggle-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+        const sub = this.parentElement.querySelector('.submenu');
+        sub.classList.toggle('active');
+        this.textContent = sub.classList.contains('active') ? '-' : '+';
+    });
+});
+</script>
     <nav>
         <a href="index.html">Home</a>
         <a href="products.html">Products</a>
         <a href="about.html">About Us</a>
         <a href="contact.html">Contact Us</a>
     </nav>
+
+<div class="product-card">
+  <h1>Inflatable Mirror Balloon, Custom Party Decoration Balloon</h1>
+  
+  <table class="product-table">
+    <tr>
+      <th>Item</th>
+      <th>Details</th>
+    </tr>
+    <tr>
+      <td>Product Description</td>
+      <td>High-quality PVC mirror balloons with reflective surface, good air tightness and long service life. Various shapes, sizes and colors are available. Custom design & logo printing supported.</td>
+    </tr>
+    <tr>
+      <td>Key Features</td>
+      <td>Eco-friendly PVC, waterproof, durable, reusable. Multiple shapes, sizes and colors in stock. Custom size, color, pattern and logo accepted.</td>
+    </tr>
+    <tr>
+      <td>Application</td>
+      <td>Wedding, birthday party, nightclub, disco, festival celebration, commercial events, indoor & outdoor decoration.</td>
+    </tr>
+    <tr>
+      <td>Packaging & Shipping</td>
+      <td>Standard export package, safe protection. Fast delivery and reliable logistics service.</td>
+    </tr>
+  </table>
+</div>
 
     <div class="container">
         <div class="prod-title">
@@ -168,7 +402,7 @@
 
         <!-- 顶部视频 -->
         <div class="top-video-section">
-            <video controls poster="images/red/product/product-1.jpg" preload="metadata">
+            <video controls aria-label="Mirror Balloon, Reflective Ball, Disco Ball for Wedding, Birthday, Party Decoration product demo video" poster="images/red/product/product-1.jpg" preload="metadata">
                 <source src="images/red/video/video-1.mp4" type="video/mp4">
             </video>
         </div>
@@ -176,9 +410,9 @@
         <!-- 所有素材全部用上，路径100%匹配 -->
         <div class="static-gallery">
             <!-- 产品图 3张 -->
-            <img src="images/red/product/product-1.jpg" alt="Red Inflatable Mirror Ball">
-            <img src="images/red/product/product-2.jpg" alt="Red Inflatable Mirror Ball">
-            <img src="images/red/product/product-3.jpg" alt="Red Inflatable Mirror Ball">
+            <img src="images/red/product/product-1.jpg" alt="Red Mirror Balloon - Inflatable Reflective Sphere for Wedding Party Decoration">
+            <img src="images/red/product/product-2.jpg" alt="Red Mirror Balloon - Inflatable Reflective Sphere for Wedding Party Decoration">
+            <img src="images/red/product/product-3.jpg" alt="Red Mirror Balloon - Inflatable Reflective Sphere for Wedding Party Decoration">
 
             <!-- 场景图 3张 -->
             <img src="images/red/scene/scene-1.jpeg" alt="Red Mirror Ball Wedding Scene">
@@ -198,10 +432,89 @@
         </a>
     </div>
 
+<!-- FAQ 结构 -->
+<section class="faq-section">
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-item">
+    <button class="faq-question">What sizes of mirror balloons do you offer? <span class="faq-icon">+</span></button>
+    <div class="faq-answer"><p>We provide balloons ranging from 30cm to 500cm in diameter, and custom sizes are available.</p></div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question">What materials are used? <span class="faq-icon">+</span></button>
+    <div class="faq-answer"><p>Adopting premium double-layer PVC material with mirror finish, reusable and durable.</p></div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question">Can I print logos or custom designs? <span class="faq-icon">+</span></button>
+    <div class="faq-answer"><p>Custom logos, patterns and colors can all be customized as required.</p></div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question">Fit for outdoor decoration? <span class="faq-icon">+</span></button>
+    <div class="faq-answer"><p>It features waterproof, ideal for indoor and outdoor decoration.</p></div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question">How long can it keep inflated? <span class="faq-icon">+</span></button>
+    <div class="faq-answer"><p>It owns excellent air tightness and can maintain shape steadily under stable temperature.</p></div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question">How about delivery time? <span class="faq-icon">+</span></button>
+    <div class="faq-answer"><p>In-stock items will be shipped within 2 to 3 days, and customized orders take 7 to 10 days.</p></div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question">Is the product reusable? <span class="faq-icon">+</span></button>
+    <div class="faq-answer"><p>It can be reused many times if deflated and stored properly.</p></div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question">What color choices do you have? <span class="faq-icon">+</span></button>
+    <div class="faq-answer"><p>We have 16 colors including silver, gold and rose gold, and customized colors are also supported.</p></div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question">Do you provide quality guarantee service? <span class="faq-icon">+</span></button>
+    <div class="faq-answer"><p>We provide full guarantee and thoughtful after-sales service for products with quality issues.</p></div>
+  </div>
+  <div class="faq-tip"><span style="color: #000; font-weight: bold;">If you have any other questions, please contact our online customer service or leave us a message.</span></div>
+</section>
+
+<style>
+.faq-section{padding:40px 20px;background:#fff;}
+.faq-section h2{text-align:center;margin-bottom:30px;}
+.faq-item{max-width:800px;margin:0 auto 15px;border:1px solid #eee;border-radius:8px;overflow:hidden;}
+.faq-question{width:100%;padding:18px 20px;background:#fff;border:none;text-align:left;font-size:16px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;}
+.faq-answer{max-height:0;overflow:hidden;transition:max-height 0.3s;background:#fff;}
+.faq-answer p{padding:0 20px 18px;margin:0;color:#555;line-height:1.6;}
+.faq-item.active .faq-answer{max-height:200px;}
+.faq-item.active .faq-icon{transform:rotate(45deg);}
+.faq-tip{text-align:center;margin-top:25px;font-size:15px;color:#666;line-height:1.6;}
+</style>
+
+<script>
+document.querySelectorAll('.faq-question').forEach(b=>{b.onclick=function(){this.parentElement.classList.toggle('active')}});
+</script>
+
+<!-- 表单结构 -->
+<section class="contact-form-section">
+  <h2>Contact Form</h2>
+  <form action="https://formsubmit.co/lisa@joyfuldecoration.com" method="POST" class="contact-form">
+    <div class="form-group"><input type="text" name="name" placeholder="Your Name" required></div>
+    <div class="form-group"><input type="email" name="email" placeholder="Email" required></div>
+    <div class="form-group"><input type="text" name="product" placeholder="Required Product"></div>
+    <div class="form-group"><textarea name="message" rows="4" placeholder="Message" required></textarea></div>
+    <button type="submit" class="submit-btn">Send Message</button>
+  </form>
+</section>
+
+<style>
+.contact-form-section{padding:40px 20px;background:#fff;max-width:800px;margin:0 auto;}
+.contact-form-section h2{text-align:center;margin-bottom:30px;}
+.contact-form{width:100%;}
+.form-group{margin-bottom:18px;}
+.form-group input,.form-group textarea{width:100%;padding:14px;border:1px solid #ddd;border-radius:6px;font-size:15px;background:#fff;}
+.submit-btn{width:100%;padding:15px;background:#f77a8f;color:#fff;border:none;border-radius:6px;font-size:16px;cursor:pointer;}
+</style>
+
     <footer>
         <p>
             <a href="whatsapp-landing.html" target="_blank">WhatsApp</a> |
-            <a href="mailto:1255527934@qq.com?subject=Inquiry%20about%20inflatable%20decorations">Email</a> |
+            <a href="mailto:lisa@joyfuldecoration.com?subject=Inquiry%20about%20inflatable%20decorations">Email</a> |
             <a href="contact.html">Contact Us</a>
         </p>
         <p style="margin-top:15px; font-size:14px;">© 2026 Joyful Decoration. All Rights Reserved.</p>
@@ -209,13 +522,14 @@
 
     <!-- 悬浮视频 -->
     <div class="float-video-box">
-        <video muted autoplay loop playsinline poster="images/red/product/product-1.jpg">
+        <video muted aria-label="Mirror Balloon, Reflective Ball, Disco Ball floating display video" autoplay loop playsinline poster="images/red/product/product-1.jpg">
             <source src="images/red/video/video-2.mp4" type="video/mp4">
         </video>
     </div>
 
     <a href="whatsapp-landing.html" class="whatsapp-float" target="_blank">💬</a>
 
-    <script src="//code.tidio.co/h9vhmiblehno7adhhqj5m0tmwvcsjvfo.js" async></script>
+    <!-- 仅保留一次 Tidio 客服脚本 -->
+    <script src="//code.tidio.co/h9vhmiblehno7adhhqi5m0tmwvcsjvfo.js" async></script>
 </body>
 </html>
