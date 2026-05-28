@@ -19,23 +19,84 @@
             flex-direction: column;
         }
 
-        /* 导航栏 */
+        /* 统一黑色导航栏 */
         nav {
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(0,0,0,0.85);
-            padding: 15px 0;
-            text-align: center;
+            background: #000;
             z-index: 999;
         }
-        nav a {
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+            padding: 0 20px;
+        }
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
             color: #fff;
             text-decoration: none;
-            margin: 0 18px;
-            font-size: 16px;
+            white-space: nowrap;
         }
-        nav a:hover { color: #ffd700; }
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 35px;
+        }
+        .nav-menu a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            white-space: nowrap;
+        }
+        .nav-menu a.active {
+            color: #ff6b81;
+            font-weight: bold;
+        }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        .hamburger span {
+            width: 24px;
+            height: 3px;
+            background: #fff;
+            border-radius: 2px;
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+            .nav-menu {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: #000;
+                flex-direction: column;
+                align-items: center;
+                padding-top: 40px;
+                gap: 25px;
+                display: none;
+            }
+            .nav-menu.show {
+                display: flex;
+            }
+            .nav-menu a {
+                font-size: 18px;
+            }
+        }
 
         /* 主体布局 */
         .main-wrapper {
@@ -159,11 +220,10 @@
             box-shadow: 0 12px 24px rgba(0,0,0,0.12);
         }
 
-        /* 核心：图片统一大小 */
         .product-card img {
             width: 100%;
-            height: 260px;         /* 固定高度，所有图一样大 */
-            object-fit: cover;      /* 不变形、自动裁剪居中 */
+            height: 260px;
+            object-fit: cover;
             object-position: center;
             background: #f5f5f5;
             display: block;
@@ -216,7 +276,7 @@
             margin: 0 10px;
         }
 
-        /* 响应式适配 */
+        /* 移动端优化：保留侧边栏但调整布局 */
         @media (max-width: 768px) {
             .main-wrapper {
                 flex-direction: column;
@@ -233,7 +293,7 @@
                 padding: 16px;
             }
             .product-card img {
-                height: 220px; /* 平板稍微矮一点 */
+                height: 220px;
             }
             .product-info {
                 padding: 12px 10px 16px;
@@ -260,7 +320,7 @@
                 gap: 20px;
             }
             .product-card img {
-                height: 240px; /* 手机单列再高一点 */
+                height: 240px;
             }
             .product-info h3 {
                 font-size: 16px;
@@ -292,10 +352,20 @@
 <body>
 
 <nav>
-    <a href="home.html">Home</a>
-    <a href="products.html">Products</a>
-    <a href="about.html">About Us</a>
-    <a href="contact.html">Contact Us</a>
+  <div class="nav-container">
+    <a href="index.html" class="logo">Joyful Decoration</a>
+    <button class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html" class="active">Products</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
 </nav>
 
 <div class="main-wrapper">
@@ -517,6 +587,18 @@
             const submenu = this.parentElement.querySelector('.submenu');
             submenu.classList.toggle('active');
             this.textContent = submenu.classList.contains('active') ? '-' : '+';
+        });
+    });
+
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+    hamburger.addEventListener('click', () => {
+        navMenu.classList.toggle('show');
+    });
+
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('show');
         });
     });
 </script>

@@ -3,25 +3,365 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome</title>
-    <meta http-equiv="refresh" content="0; url=products.html">
-<style>
-/* ===== 仅优化Tidio按钮，不影响其他样式 ===== */
-#tidio-chat-iframe {
-    transform: scale(1.3) !important;
-    transform-origin: bottom right !important;
-    right: 10px !important;
-    bottom: 180px !important;
-}
-.tidio-widget-side-button {
-    font-size: 16px !important;
-    font-weight: 500 !important;
-    line-height: 1.5 !important;
-}
-</style>
+    <title>Joyful Decoration | Wholesale Mirror Balloons</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+        html { scroll-padding-top: 70px; }
+        body {
+            color: #333;
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        nav{
+            position:fixed;top:0;width:100%;
+            background:rgba(0,0,0,0.85);
+            z-index:999;
+        }
+        .nav-container {
+            max-width:1200px;margin:auto;
+            display:flex;justify-content:space-between;align-items:center;
+            height:70px;padding:0 20px;
+            position:relative;
+        }
+        .logo {
+            color:white;font-size:24px;font-weight:bold;
+            text-decoration:none;
+        }
+        .nav-menu {
+            display:flex;list-style:none;gap:30px;
+        }
+        .nav-menu a{color:white;text-decoration:none;font-size:17px;}
+        .nav-menu a.active{color:#ff6b81}
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        .hamburger span {
+            width: 24px;
+            height: 3px;
+            background: #fff;
+            border-radius: 2px;
+        }
+        @media (max-width:768px) {
+            .hamburger { display: flex; }
+            .nav-menu {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: rgba(0,0,0,0.95);
+                flex-direction: column;
+                align-items: center;
+                padding-top: 40px;
+                gap: 25px;
+                display: none;
+            }
+            .nav-menu.show { display: flex; }
+        }
+
+        .hero {
+            width:100%;height:calc(100vh - 70px);
+            position:relative;overflow:hidden;
+        }
+        .hero video {
+            width:100%;height:100%;object-fit:cover;
+        }
+        .hero-text-box {
+            position:absolute;
+            top:50%;left:50%;
+            transform:translate(-50%,-50%);
+            background:rgba(255,255,255,0.9);
+            padding:40px;
+            border-radius:12px;
+            text-align:center;
+            max-width:800px;
+        }
+        .hero-text-box h1 {
+            font-size:36px;
+            font-weight:bold;
+            color:#222;
+            margin-bottom:20px;
+            text-shadow:
+                0 0 5px #fff,
+                0 0 10px #fff,
+                0 0 20px #ff6b81,
+                0 0 40px #ff6b81;
+            white-space: nowrap;
+        }
+        .hero-text-box p {
+            font-size:18px;
+            color:#555;
+            margin-bottom:30px;
+        }
+        .btn {
+            background:#ff6b81;
+            color:white;
+            padding:12px 30px;
+            border:none;
+            border-radius:6px;
+            text-decoration:none;
+            font-size:18px;
+            font-weight:bold;
+        }
+
+        .below-hero {
+            background-image: url("images/front/hero-poster.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 80px 0;
+        }
+
+        .container{
+            max-width:1200px;margin:0 auto;padding:0 20px;
+        }
+        .title{
+            text-align:center;margin-bottom:40px;
+            font-size:32px;
+            font-weight:bold;
+            color:#222;
+        }
+
+        .products-row {
+            display:grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap:25px;
+        }
+        .product-card {
+            background:rgba(255,255,255,0.95);
+            border-radius:8px;overflow:hidden;
+            box-shadow:0 2px 8px rgba(0,0,0,0.08);
+            text-align:center;
+            padding-bottom:20px;
+        }
+        .product-card img {
+            width:100%;height:200px;object-fit:cover;
+        }
+        .product-card h3 {
+            padding:15px 10px;
+            font-size:18px;
+        }
+        .btn-detail {
+            background: #ff6b81;
+            color: white;
+            padding: 8px 20px;
+            border: none;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .why-row {
+            display:grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap:30px;
+        }
+        .why-card {
+            background:rgba(255,255,255,0.95);
+            padding:30px;border-radius:8px;
+            box-shadow:0 2px 8px rgba(0,0,0,0.08);
+            text-align:center;
+        }
+        .why-card h3 {
+            margin-bottom:15px;
+            font-size:20px;
+        }
+        .why-card p {
+            font-size:16px;color:#555;
+        }
+
+        .testi-row {
+            display:grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap:25px;
+        }
+        .testi-card {
+            background:rgba(255,255,255,0.95);
+            padding:25px;border-radius:8px;
+            box-shadow:0 2px 8px rgba(0,0,0,0.08);
+            text-align:center;
+        }
+        .testi-card img {
+            width:100%;height:180px;object-fit:cover;border-radius:6px;margin-bottom:15px;
+        }
+        .stars {color:#ffc107;font-size:18px;}
+        .testi-card p {font-size:16px;}
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 100px;
+            right: 24px;
+            background: #25d366;
+            color: white;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            font-size: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            z-index: 9999;
+            text-decoration: none;
+        }
+
+        footer {
+            background:#222;color:white;text-align:center;padding:40px 20px;
+            font-size:16px;
+        }
+        footer a {color:#ffd700;margin:0 10px;text-decoration:none;font-size:17px;}
+
+        #tidio-chat-iframe {
+            transform: scale(1.3) !important;
+            transform-origin: bottom right !important;
+            right: 10px !important;
+            bottom: 180px !important;
+        }
+        .tidio-widget-side-button {
+            font-size: 16px !important;
+            font-weight: 500 !important;
+            line-height: 1.5 !important;
+        }
+        @media (max-width:768px) {
+            #tidio-chat-iframe {
+                transform: scale(1) !important;
+                bottom: 100px !important;
+            }
+        }
+    </style>
 </head>
+
 <body>
-<!-- 专属Tidio在线客服窗口 -->
+
+<nav>
+    <div class="nav-container">
+        <a href="index.html" class="logo">Joyful Decoration</a>
+        <button class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-menu" id="navMenu">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<section class="hero">
+    <video autoplay muted loop playsinline poster="images/front/hero-poster.jpg">
+        <source src="images/front/hero.mp4" type="video/mp4">
+    </video>
+    <div class="hero-text-box">
+        <h1>Mirror the World, Reflect the Joy!</h1>
+        <p>Wholesale high-quality inflatable mirror balloons for weddings, parties, and events. Shiny, durable, and customizable to make your occasion unforgettable.</p>
+        <a href="products.html" class="btn">View All Products</a>
+    </div>
+</section>
+
+<section class="below-hero">
+    <div class="container">
+        <h2 class="title">Featured Products</h2>
+        <div class="products-row">
+            <div class="product-card">
+                <img src="images/gold/product/product-1.jpg" alt="Gold Mirror Balloon">
+                <h3>Gold Mirror Balloon</h3>
+                <a href="products.html#gold" class="btn-detail">View Details</a>
+            </div>
+            <div class="product-card">
+                <img src="images/silver/product/product-1.jpg" alt="Silver Mirror Balloon">
+                <h3>Silver Mirror Balloon</h3>
+                <a href="products.html#silver" class="btn-detail">View Details</a>
+            </div>
+            <div class="product-card">
+                <img src="images/egg-shape%20gold/product/product-1.jpg" alt="Gold Egg Mirror Balloon">
+                <h3>Gold Egg Mirror Balloon</h3>
+                <a href="products.html#egg-gold" class="btn-detail">View Details</a>
+            </div>
+            <div class="product-card">
+                <img src="images/mirror%20arch/product-1.jpg" alt="Mirror Arch Decoration">
+                <h3>Mirror Arch Decoration</h3>
+                <a href="products.html#arch" class="btn-detail">View Details</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" style="margin-top:80px;">
+        <h2 class="title">Why Choose Us</h2>
+        <div class="why-row">
+            <div class="why-card">
+                <h3>Factory Partnership</h3>
+                <p>Direct cooperation with professional factories to ensure competitive prices.</p>
+            </div>
+            <div class="why-card">
+                <h3>Global Shipping</h3>
+                <p>Fast delivery worldwide (remote areas freight needs confirmation).</p>
+            </div>
+            <div class="why-card">
+                <h3>OEM & Customization</h3>
+                <p>Custom size, color, and logo printing available.</p>
+            </div>
+            <div class="why-card">
+                <h3>Fast Response</h3>
+                <p>Personal studio model for flexible communication and quick replies.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" style="margin-top:80px;">
+        <h2 class="title">What Our Clients Say</h2>
+        <div class="testi-row">
+            <div class="testi-card">
+                <img src="images/testimonial/scene1.jpg" alt="Client Event">
+                <div class="stars">★★★★★</div>
+                <p class="testi-text">Great quality and fast shipping. Our clients love the mirror balloons!</p>
+                <p class="testi-name">— Maria, Event Planner (Spain)</p>
+            </div>
+            <div class="testi-card">
+                <img src="images/testimonial/scene2.jpg" alt="Party Decoration">
+                <div class="stars">★★★★★</div>
+                <p class="testi-text">Professional supplier, always reliable. Will order again and again.</p>
+                <p class="testi-name">— David, Party Wholesaler (UK)</p>
+            </div>
+            <div class="testi-card">
+                <img src="images/testimonial/scene3.jpg" alt="Wedding Setup">
+                <div class="stars">★★★★★</div>
+                <p class="testi-text">Beautiful products, exactly as described. Highly recommended!</p>
+                <p class="testi-name">— Sophie, Decoration Shop (France)</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>
+        <a href="mailto:lisa@joyfuldecoration.com">Email Us</a> |
+        <a href="https://wa.me/8617610999769" target="_blank">WhatsApp</a> |
+        <a href="contact.html">Contact Us</a>
+    </p>
+    <p style="margin-top:15px">© 2026 Joyful Decoration. All Rights Reserved.</p>
+</footer>
+
+<a href="https://wa.me/8617610999769" target="_blank" class="whatsapp-float">💬</a>
+
+<script>
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('navMenu');
+hamburger.addEventListener('click', () => {
+    navMenu.classList.toggle('show');
+});
+</script>
+
 <script src="//code.tidio.co/h9vhmiblehno7adhhqi5m0tmwvcsjvfo.js" async></script>
+
 </body>
 </html>
